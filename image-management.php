@@ -246,7 +246,7 @@
         <?php $i = $i+1; } ?>
       </table>
       <br />
-      Check the official page for live demo and more help <a href="http://www.gopiplus.com/work/2011/11/06/fancy-image-show-wordpress-plugin/">www.gopiplus.com</a> 
+      Check the official page for live demo and more help <a target="_blank" href="http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/">click here</a> 
     </form>
   </div>
 </div>
