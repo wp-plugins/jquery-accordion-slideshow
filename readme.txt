@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-w
 Plugin URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/
 Tags:  jquery, accordion, slideshow, slider
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 5.0
+Tested up to: 3.5
+Stable tag: 5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -75,6 +75,11 @@ New demo link, www.gopiplus.com
 
 Tested up to: 3.4.2
 
+= 5.1 =
+
+Tested up to 3.5
+Avoid registering the alternate jQuery. No jQuery conflict.
+
 == Changelog ==
 
 = 1.0 =
@@ -83,7 +88,7 @@ First version
 
 = 2.0 =
 
-Tested UpTo 3.4	
+Tested up to 3.4	
 
 = 3.0 =
 
@@ -96,4 +101,9 @@ New demo link, www.gopiplus.com
 
 = 5.0 =
 
-Tested up to: 3.4.2
+Tested up to 3.4.2
+
+= 5.1 =
+
+Tested up to 3.5
+Avoid registering the alternate jQuery. No jQuery conflict.
