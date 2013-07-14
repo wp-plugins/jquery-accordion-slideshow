@@ -4,7 +4,7 @@ Plugin Name: Jquery accordion slideshow
 Plugin URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/
 Description: This is another slideshow plugin for Word Press with accordion effect using famous JQuery JavaScript. Using this word press plugin we can easily create horizontal accordion slideshow. 
 Author: Gopi.R
-Version: 5.1
+Version: 6.0
 Author URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/
 Tags: jquery, accordion, slideshow, accordion slider
@@ -14,6 +14,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("WpJqueryAccordionSlidshowTbl", $wpdb->prefix . "jas_plugin");
+define("Wp_JaS_UNIQUE_NAME", "jquery-accordion-slideshow");
+define("Wp_JaS_TITLE", "Jquery accordion slideshow");
+define('Wp_JaS_FAV', 'http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/');
+define('Wp_JaS_LINK', 'Check official website for more information <a target="_blank" href="'.Wp_JaS_FAV.'">click here</a>');
 
 function JaSShow() 
 {
@@ -119,7 +123,24 @@ function JaS_install()
 
 function JaS_admin_options() 
 {
-	include_once("image-management.php");
+	//include_once("image-management.php");
+	global $wpdb;
+	$current_page = isset($_GET['ac']) ? $_GET['ac'] : '';
+	switch($current_page)
+	{
+		case 'edit':
+			include('pages/image-edit.php');
+			break;
+		case 'add':
+			include('pages/image-add.php');
+			break;
+		case 'set':
+			include('pages/widget-setting.php');
+			break;
+		default:
+			include('pages/image-show.php');
+			break;
+	}
 }
 
 function JaS_shortcode( $atts ) 
@@ -178,47 +199,51 @@ function JaS_shortcode( $atts )
 				$JasImg = $JasImg ."<li><img src='".$siteurl_link . $JaS_Location . $f_file ."' /></li>";
 			}
 		}
-	}
 
-	$Jas = '<div id="mod-jt-zaccordion" style=" widows:'.$JaS_width.'px; height: '.$JaS_height.'px;"> ';
-		$Jas = $Jas . '<ul id="jt-zaccordion"> ';
-			$Jas = $Jas . $JasImg;
-		$Jas = $Jas . '</ul> ';
-	$Jas = $Jas . '</div> ';
-	$Jas = $Jas . '<div style="clear:both;"></div> ';
-	
-	$Jas = $Jas . '<script type="text/javascript"> ';
-	$Jas = $Jas . 'jQuery.noConflict(); ';
-	$Jas = $Jas . 'jQuery(document).ready(function() {	';
-		$Jas = $Jas . 'jQuery("#jt-zaccordion").zAccordion({ ';
-		$Jas = $Jas . 'timeout: '.$JaS_timeout.', '; /* Time between each slide (in ms) */
-		$Jas = $Jas . 'width: '.$JaS_width.', '; /* Width of the container (in px) */
-		$Jas = $Jas . 'height: '.$JaS_height.', '; /* Height of the container (in px) */
-		$Jas = $Jas . 'slideWidth: '.$JaS_slideWidth.', '; /* Width of each slide (in px) */
-		$Jas = $Jas . 'slideHeight: '.$JaS_slideHeight.', '; /* Height of each slide (in px) */
-		$Jas = $Jas . 'tabWidth: '.$JaS_tabWidth.', '; /* Width of each slide's "tab" (when clicked it opens the slide) */
-		$Jas = $Jas . 'speed: '.$JaS_speed.', '; /* Speed of the slide transition (in ms) */
-		$Jas = $Jas . 'trigger: "'.$JaS_trigger.'", '; /* Event type that will bind to the "tab" (click, mouseover, etc.) */
-		$Jas = $Jas . 'pause: '.$JaS_pause.', '; /* Pause on hover */
-		$Jas = $Jas . 'invert: '.$JaS_invert.', '; /* Whether or not to invert the slideshow, so the last slide stays in the same position, rather than the first slide */
-		$Jas = $Jas . 'easing: '.$easing.' ';
+		$Jas = '<div id="mod-jt-zaccordion" style=" widows:'.$JaS_width.'px; height: '.$JaS_height.'px;"> ';
+			$Jas = $Jas . '<ul id="jt-zaccordion"> ';
+				$Jas = $Jas . $JasImg;
+			$Jas = $Jas . '</ul> ';
+		$Jas = $Jas . '</div> ';
+		$Jas = $Jas . '<div style="clear:both;"></div> ';
+		
+		$Jas = $Jas . '<script type="text/javascript"> ';
+		$Jas = $Jas . 'jQuery.noConflict(); ';
+		$Jas = $Jas . 'jQuery(document).ready(function() {	';
+			$Jas = $Jas . 'jQuery("#jt-zaccordion").zAccordion({ ';
+			$Jas = $Jas . 'timeout: '.$JaS_timeout.', '; /* Time between each slide (in ms) */
+			$Jas = $Jas . 'width: '.$JaS_width.', '; /* Width of the container (in px) */
+			$Jas = $Jas . 'height: '.$JaS_height.', '; /* Height of the container (in px) */
+			$Jas = $Jas . 'slideWidth: '.$JaS_slideWidth.', '; /* Width of each slide (in px) */
+			$Jas = $Jas . 'slideHeight: '.$JaS_slideHeight.', '; /* Height of each slide (in px) */
+			$Jas = $Jas . 'tabWidth: '.$JaS_tabWidth.', '; /* Width of each slide's "tab" (when clicked it opens the slide) */
+			$Jas = $Jas . 'speed: '.$JaS_speed.', '; /* Speed of the slide transition (in ms) */
+			$Jas = $Jas . 'trigger: "'.$JaS_trigger.'", '; /* Event type that will bind to the "tab" (click, mouseover, etc.) */
+			$Jas = $Jas . 'pause: '.$JaS_pause.', '; /* Pause on hover */
+			$Jas = $Jas . 'invert: '.$JaS_invert.', '; /* Whether or not to invert the slideshow, so the last slide stays in the same position, rather than the first slide */
+			$Jas = $Jas . 'easing: '.$easing.' ';
+			$Jas = $Jas . '}); ';
 		$Jas = $Jas . '}); ';
-	$Jas = $Jas . '}); ';
-	$Jas = $Jas . '</script> ';
+		$Jas = $Jas . '</script> ';
 	
+	}
+	else
+	{
+		$Jas = "No date available for this group";
+	}
+		
 	return $Jas;
 }
 
 function JaS_deactivation() 
 {
-
+	// No action required.
 }
 
 function JaS_add_javascript_files() 
 {
 	if (!is_admin())
 	{
-		//wp_enqueue_script( 'jquery.min', get_option('siteurl').'/wp-content/plugins/jquery-accordion-slideshow/js/jquery.min.js'); Not required
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'jquery.zaccordion.min', get_option('siteurl').'/wp-content/plugins/jquery-accordion-slideshow/js/jquery.zaccordion.min.js');
 		wp_enqueue_script( 'jquery.easing.1.3', get_option('siteurl').'/wp-content/plugins/jquery-accordion-slideshow/js/jquery.easing.1.3.js');
@@ -227,7 +252,7 @@ function JaS_add_javascript_files()
 
 function JaS_add_to_menu() 
 {
-	add_options_page('Jquery accordion slideshow', 'Jquery accordion slideshow', 'manage_options', __FILE__, 'JaS_admin_options' );
+	add_options_page('Jquery accordion slideshow', 'Jquery accordion slideshow', 'manage_options', 'jquery-accordion-slideshow', 'JaS_admin_options' );
 }
 
 if (is_admin()) 

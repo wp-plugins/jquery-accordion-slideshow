@@ -85,14 +85,14 @@ function JaS_delete(id)
 {
 	if(confirm("Do you want to delete this record?"))
 	{
-		document.frm_JaS_display.action="options-general.php?page=jquery-accordion-slideshow/jquery-accordion-slideshow.php&AC=DEL&DID="+id;
+		document.frm_JaS_display.action="options-general.php?page=jquery-accordion-slideshow&ac=del&did="+id;
 		document.frm_JaS_display.submit();
 	}
 }	
 
 function JaS_redirect()
 {
-	window.location = "options-general.php?page=jquery-accordion-slideshow/jquery-accordion-slideshow.php";
+	window.location = "options-general.php?page=jquery-accordion-slideshow";
 }
 
 function JaS_help()
