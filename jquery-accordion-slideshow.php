@@ -4,7 +4,7 @@ Plugin Name: Jquery accordion slideshow
 Plugin URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/
 Description: This is another slideshow plugin for Word Press with accordion effect using famous JQuery JavaScript. Using this word press plugin we can easily create horizontal accordion slideshow. 
 Author: Gopi.R
-Version: 6.0
+Version: 6.1
 Author URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/
 Tags: jquery, accordion, slideshow, accordion slider
@@ -14,10 +14,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("WpJqueryAccordionSlidshowTbl", $wpdb->prefix . "jas_plugin");
-define("Wp_JaS_UNIQUE_NAME", "jquery-accordion-slideshow");
-define("Wp_JaS_TITLE", "Jquery accordion slideshow");
 define('Wp_JaS_FAV', 'http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/');
-define('Wp_JaS_LINK', 'Check official website for more information <a target="_blank" href="'.Wp_JaS_FAV.'">click here</a>');
+
+if ( ! defined( 'WP_JaS_BASENAME' ) )
+	define( 'WP_JaS_BASENAME', plugin_basename( __FILE__ ) );
+	
+if ( ! defined( 'WP_JaS_PLUGIN_NAME' ) )
+	define( 'WP_JaS_PLUGIN_NAME', trim( dirname( WP_JaS_BASENAME ), '/' ) );
+	
+if ( ! defined( 'WP_JaS_PLUGIN_URL' ) )
+	define( 'WP_JaS_PLUGIN_URL', WP_PLUGIN_URL . '/' . WP_JaS_PLUGIN_NAME );
+	
+if ( ! defined( 'WP_JaS_ADMIN_URL' ) )
+	define( 'WP_JaS_ADMIN_URL', get_option('siteurl') . '/wp-admin/options-general.php?page=jquery-accordion-slideshow' );
 
 function JaSShow() 
 {
@@ -56,33 +65,37 @@ function JaSShow()
 				$JasImg = $JasImg ."<li><img src='".$siteurl_link . $JaS_Location . $f_file ."' /></li>";
 			}
 		}
-	}
-	?>
-    <div id="mod-jt-zaccordion" style=" widows:<?php echo $JaS_width; ?>px; height: <?php echo $JaS_height; ?>px;">
-        <ul id="jt-zaccordion">
-			<?php echo $JasImg; ?>
-        </ul>
-	</div>
-	<div style="clear:both;"></div>
-	<script type="text/javascript">
-	jQuery.noConflict();
-	jQuery(document).ready(function() {	
-		jQuery("#jt-zaccordion").zAccordion({
-		timeout: <?php echo $JaS_timeout; ?>, /* Time between each slide (in ms) */
-		width: <?php echo $JaS_width;?>, /* Width of the container (in px) */
-		height: <?php echo $JaS_height;?>, /* Height of the container (in px) */
-		slideWidth: <?php echo $JaS_slideWidth;?>, /* Width of each slide (in px) */
-		slideHeight: <?php echo $JaS_slideHeight;?>, /* Height of each slide (in px) */
-		tabWidth: <?php echo $JaS_tabWidth;?>, /* Width of each slide's "tab" (when clicked it opens the slide) */
-		speed: <?php echo $JaS_speed; ?>, /* Speed of the slide transition (in ms) */
-		trigger: "<?php echo $JaS_trigger; ?>", /* Event type that will bind to the "tab" (click, mouseover, etc.) */
-		pause: <?php echo $JaS_pause; ?>, /* Pause on hover */
-		invert: <?php echo $JaS_invert; ?>, /* Whether or not to invert the slideshow, so the last slide stays in the same position, rather than the first slide */
-		<?php if ($JaS_easing != "null") { ?> easing: "<?php echo $JaS_easing;?>" <?php } else {?> easing: null <?php } ?>
+		?>
+		<div id="mod-jt-zaccordion" style=" widows:<?php echo $JaS_width; ?>px; height: <?php echo $JaS_height; ?>px;">
+			<ul id="jt-zaccordion">
+				<?php echo $JasImg; ?>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+		<script type="text/javascript">
+		jQuery.noConflict();
+		jQuery(document).ready(function() {	
+			jQuery("#jt-zaccordion").zAccordion({
+			timeout: <?php echo $JaS_timeout; ?>, /* Time between each slide (in ms) */
+			width: <?php echo $JaS_width;?>, /* Width of the container (in px) */
+			height: <?php echo $JaS_height;?>, /* Height of the container (in px) */
+			slideWidth: <?php echo $JaS_slideWidth;?>, /* Width of each slide (in px) */
+			slideHeight: <?php echo $JaS_slideHeight;?>, /* Height of each slide (in px) */
+			tabWidth: <?php echo $JaS_tabWidth;?>, /* Width of each slide's "tab" (when clicked it opens the slide) */
+			speed: <?php echo $JaS_speed; ?>, /* Speed of the slide transition (in ms) */
+			trigger: "<?php echo $JaS_trigger; ?>", /* Event type that will bind to the "tab" (click, mouseover, etc.) */
+			pause: <?php echo $JaS_pause; ?>, /* Pause on hover */
+			invert: <?php echo $JaS_invert; ?>, /* Whether or not to invert the slideshow, so the last slide stays in the same position, rather than the first slide */
+			<?php if ($JaS_easing != "null") { ?> easing: "<?php echo $JaS_easing;?>" <?php } else {?> easing: null <?php } ?>
+			});
 		});
-	});
-	</script>
-    <?php
+		</script>
+		<?php
+	}
+	else
+	{
+		echo "No date available for the group GALLERY1";
+	}
 }
 
 function JaS_install() 
@@ -108,7 +121,7 @@ function JaS_install()
 		$sSql = $sSql . "`JaS_easing` VARCHAR( 6 ) NOT NULL ,";
 		$sSql = $sSql . "`JaS_Date` datetime NOT NULL default '0000-00-00 00:00:00' ,";
 		$sSql = $sSql . "PRIMARY KEY ( `JaS_id` )";
-		$sSql = $sSql . ")";
+		$sSql = $sSql . ") ENGINE=MyISAM  DEFAULT CHARSET=utf8;";
 		$wpdb->query($sSql);
 		
 		$sSql = "";
@@ -211,16 +224,16 @@ function JaS_shortcode( $atts )
 		$Jas = $Jas . 'jQuery.noConflict(); ';
 		$Jas = $Jas . 'jQuery(document).ready(function() {	';
 			$Jas = $Jas . 'jQuery("#jt-zaccordion").zAccordion({ ';
-			$Jas = $Jas . 'timeout: '.$JaS_timeout.', '; /* Time between each slide (in ms) */
-			$Jas = $Jas . 'width: '.$JaS_width.', '; /* Width of the container (in px) */
-			$Jas = $Jas . 'height: '.$JaS_height.', '; /* Height of the container (in px) */
-			$Jas = $Jas . 'slideWidth: '.$JaS_slideWidth.', '; /* Width of each slide (in px) */
-			$Jas = $Jas . 'slideHeight: '.$JaS_slideHeight.', '; /* Height of each slide (in px) */
-			$Jas = $Jas . 'tabWidth: '.$JaS_tabWidth.', '; /* Width of each slide's "tab" (when clicked it opens the slide) */
-			$Jas = $Jas . 'speed: '.$JaS_speed.', '; /* Speed of the slide transition (in ms) */
-			$Jas = $Jas . 'trigger: "'.$JaS_trigger.'", '; /* Event type that will bind to the "tab" (click, mouseover, etc.) */
-			$Jas = $Jas . 'pause: '.$JaS_pause.', '; /* Pause on hover */
-			$Jas = $Jas . 'invert: '.$JaS_invert.', '; /* Whether or not to invert the slideshow, so the last slide stays in the same position, rather than the first slide */
+			$Jas = $Jas . 'timeout: '.$JaS_timeout.', ';
+			$Jas = $Jas . 'width: '.$JaS_width.', ';
+			$Jas = $Jas . 'height: '.$JaS_height.', ';
+			$Jas = $Jas . 'slideWidth: '.$JaS_slideWidth.', ';
+			$Jas = $Jas . 'slideHeight: '.$JaS_slideHeight.', ';
+			$Jas = $Jas . 'tabWidth: '.$JaS_tabWidth.', ';
+			$Jas = $Jas . 'speed: '.$JaS_speed.', ';
+			$Jas = $Jas . 'trigger: "'.$JaS_trigger.'", ';
+			$Jas = $Jas . 'pause: '.$JaS_pause.', ';
+			$Jas = $Jas . 'invert: '.$JaS_invert.', ';
 			$Jas = $Jas . 'easing: '.$easing.' ';
 			$Jas = $Jas . '}); ';
 		$Jas = $Jas . '}); ';
@@ -245,14 +258,15 @@ function JaS_add_javascript_files()
 	if (!is_admin())
 	{
 		wp_enqueue_script('jquery');
-		wp_enqueue_script( 'jquery.zaccordion.min', get_option('siteurl').'/wp-content/plugins/jquery-accordion-slideshow/js/jquery.zaccordion.min.js');
-		wp_enqueue_script( 'jquery.easing.1.3', get_option('siteurl').'/wp-content/plugins/jquery-accordion-slideshow/js/jquery.easing.1.3.js');
+		wp_enqueue_script( 'jquery.zaccordion.min', WP_JaS_PLUGIN_URL.'/js/jquery.zaccordion.min.js');
+		wp_enqueue_script( 'jquery.easing.1.3', WP_JaS_PLUGIN_URL.'/js/jquery.easing.1.3.js');
 	}	
 }
 
 function JaS_add_to_menu() 
 {
-	add_options_page('Jquery accordion slideshow', 'Jquery accordion slideshow', 'manage_options', 'jquery-accordion-slideshow', 'JaS_admin_options' );
+	add_options_page(__('Jquery accordion slideshow', 'jquery-accordion'), 
+						__('Jquery accordion slideshow', 'jquery-accordion'), 'manage_options', 'jquery-accordion-slideshow', 'JaS_admin_options' );
 }
 
 if (is_admin()) 
@@ -272,22 +286,34 @@ function JaS_widget($args)
 
 function JaS_control() 
 {
-	echo 'Jquery accordion slideshow';
+	echo '<p><b>';
+	_e('Jquery accordion slideshow', 'jquery-accordion');
+	echo '.</b> ';
+	_e('Check official website for more information', 'jquery-accordion');
+	?> <a target="_blank" href="<?php echo Wp_JaS_FAV; ?>"><?php _e('click here', 'jquery-accordion'); ?></a></p><?php
 }
 
 function JaS_init()
 {
 	if(function_exists('wp_register_sidebar_widget')) 
 	{
-		wp_register_sidebar_widget('Jquery accordion slideshow', 'Jquery accordion slideshow', 'JaS_widget');
+		wp_register_sidebar_widget(__('Jquery accordion slideshow', 'jquery-accordion'), 
+					__('Jquery accordion slideshow', 'jquery-accordion'), 'JaS_widget');
 	}
 	
 	if(function_exists('wp_register_widget_control')) 
 	{
-		wp_register_widget_control('Jquery accordion slideshow', array('Jquery accordion slideshow', 'widgets'), 'JaS_control');
+		wp_register_widget_control(__('Jquery accordion slideshow', 'jquery-accordion'), 
+					array( __('Jquery accordion slideshow', 'jquery-accordion'), 'widgets'), 'JaS_control');
 	} 
 }
 
+function JaS_textdomain() 
+{
+	  load_plugin_textdomain( 'jquery-accordion', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action('plugins_loaded', 'JaS_textdomain');
 add_shortcode( 'jquery-accordion', 'JaS_shortcode' );
 add_action('wp_enqueue_scripts', 'JaS_add_javascript_files');
 add_action("plugins_loaded", "JaS_init");

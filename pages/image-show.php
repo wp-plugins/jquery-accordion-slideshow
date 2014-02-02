@@ -18,7 +18,7 @@ if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
 	
 	if ($result != '1')
 	{
-		?><div class="error fade"><p><strong>Oops, selected details doesn't exist (1).</strong></p></div><?php
+		?><div class="error fade"><p><strong><?php _e('Oops, selected details doesnt exist', 'jquery-accordion'); ?></strong></p></div><?php
 	}
 	else
 	{
@@ -36,7 +36,7 @@ if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
 			
 			//	Set success message
 			$JaS_success_msg = TRUE;
-			$JaS_success = __('Selected record was successfully deleted.', TinyCarousel_UNIQUE_NAME);
+			$JaS_success = __('Selected record was successfully deleted.', 'jquery-accordion');
 		}
 	}
 	
@@ -48,36 +48,37 @@ if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
 ?>
 <div class="wrap">
   <div id="icon-edit" class="icon32 icon32-posts-post"></div>
-    <h2><?php echo Wp_JaS_TITLE; ?><a class="add-new-h2" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=jquery-accordion-slideshow&amp;ac=add">Add New</a></h2>
+    <h2><?php _e('Jquery accordion slideshow', 'jquery-accordion'); ?>
+	<a class="add-new-h2" href="<?php echo WP_JaS_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'jquery-accordion'); ?></a></h2>
     <div class="tool-box">
 	<?php
 		$sSql = "SELECT * FROM `".WpJqueryAccordionSlidshowTbl."` order by JaS_id desc";
 		$myData = array();
 		$myData = $wpdb->get_results($sSql, ARRAY_A);
 		?>
-		<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/jquery-accordion-slideshow/pages/setting.js"></script>
+		<script language="JavaScript" src="<?php echo WP_JaS_PLUGIN_URL; ?>/pages/setting.js"></script>
 		<form name="frm_JaS_display" method="post">
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
             <th class="check-column" scope="col"><input type="checkbox" name="JaS_group_item[]" /></th>
-			<th scope="col">Image folder location</th>
-			<th scope="col">Gallery name</th>
-            <th scope="col">Container width</th>
-			<th scope="col">Container height</th>
-			<th scope="col">Slide width</th>
-			<th scope="col">Slide height</th>
+			<th scope="col"><?php _e('Image folder location', 'jquery-accordion'); ?></th>
+			<th scope="col"><?php _e('Gallery name', 'jquery-accordion'); ?></th>
+            <th scope="col"><?php _e('Container width', 'jquery-accordion'); ?></th>
+			<th scope="col"><?php _e('Container height', 'jquery-accordion'); ?></th>
+			<th scope="col"><?php _e('Slide width', 'jquery-accordion'); ?></th>
+			<th scope="col"><?php _e('Slide height', 'jquery-accordion'); ?></th>
           </tr>
         </thead>
 		<tfoot>
           <tr>
             <th class="check-column" scope="col"><input type="checkbox" name="JaS_group_item[]" /></th>
-			<th scope="col">Image folder location</th>
-			<th scope="col">Gallery name</th>
-            <th scope="col">Container width</th>
-			<th scope="col">Container height</th>
-			<th scope="col">Slide width</th>
-			<th scope="col">Slide height</th>
+			<th scope="col"><?php _e('Image folder location', 'jquery-accordion'); ?></th>
+			<th scope="col"><?php _e('Gallery name', 'jquery-accordion'); ?></th>
+            <th scope="col"><?php _e('Container width', 'jquery-accordion'); ?></th>
+			<th scope="col"><?php _e('Container height', 'jquery-accordion'); ?></th>
+			<th scope="col"><?php _e('Slide width', 'jquery-accordion'); ?></th>
+			<th scope="col"><?php _e('Slide height', 'jquery-accordion'); ?></th>
           </tr>
         </tfoot>
 		<tbody>
@@ -92,8 +93,8 @@ if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
 						<td align="left"><input type="checkbox" value="<?php echo $data['JaS_id']; ?>" name="JaS_group_item[]"></td>
 						<td><?php echo $data['JaS_Location']; ?>
 						<div class="row-actions">
-							<span class="edit"><a title="Edit" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=jquery-accordion-slideshow&amp;ac=edit&amp;did=<?php echo $data['JaS_id']; ?>">Edit</a> | </span>
-							<span class="trash"><a onClick="javascript:JaS_delete('<?php echo $data['JaS_id']; ?>')" href="javascript:void(0);">Delete</a></span> 
+						<span class="edit"><a title="Edit" href="<?php echo WP_JaS_ADMIN_URL; ?>&amp;ac=edit&amp;did=<?php echo $data['JaS_id']; ?>"><?php _e('Edit', 'jquery-accordion'); ?></a> | </span>
+						<span class="trash"><a onClick="javascript:JaS_delete('<?php echo $data['JaS_id']; ?>')" href="javascript:void(0);"><?php _e('Delete', 'jquery-accordion'); ?></a></span> 
 						</div>
 						</td>
 						<td><?php echo $data['JaS_Gallery']; ?></td>
@@ -108,28 +109,31 @@ if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
 			}
 			else
 			{
-				?><tr><td colspan="7" align="center">No records available.</td></tr><?php 
+				?><tr><td colspan="7" align="center"><?php _e('No records available.', 'jquery-accordion'); ?></td></tr><?php 
 			}
 			?>
 		</tbody>
         </table>
-		<p class="description">Note: Don't upload your original images into plug-in folder. if you upload the images into plug-in folder, you may lose the images when you update the plug-in to next version.</p>
+		<p class="description"><?php _e('Note: Dont upload your original images into plug-in folder. if you upload the images into plug-in folder, you may lose the images when you update the plug-in to next version.', 'jquery-accordion'); ?></p>
 		<?php wp_nonce_field('JaS_form_show'); ?>
 		<input type="hidden" name="frm_JaS_display" value="yes"/>
       </form>	
 	  <div class="tablenav">
 	  <h2>
-	  <a class="button add-new-h2" href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=jquery-accordion-slideshow&amp;ac=add">Add New</a>
-	  <a class="button add-new-h2" target="_blank" href="<?php echo Wp_JaS_FAV; ?>">Help</a>
+	  <a class="button add-new-h2" href="<?php echo WP_JaS_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'jquery-accordion'); ?></a>
+	  <a class="button add-new-h2" target="_blank" href="<?php echo Wp_JaS_FAV; ?>"><?php _e('Help', 'jquery-accordion'); ?></a>
 	  </h2>
 	  </div>
 	  <div style="height:5px"></div>
-	<h3>Plugin configuration option</h3>
+	<h3><?php _e('Plugin configuration option', 'jquery-accordion'); ?></h3>
 	<ol>
-		<li>Drag and drop the widget to your sidebar.</li>
-		<li>Add the plugin in the posts or pages using short code.</li>
-		<li>Add directly in to the theme using PHP code.</li>
+		<li><?php _e('Drag and drop the widget to your sidebar.', 'jquery-accordion'); ?></li>
+		<li><?php _e('Add the plugin in the posts or pages using short code.', 'jquery-accordion'); ?></li>
+		<li><?php _e('Add directly in to the theme using PHP code.', 'jquery-accordion'); ?></li>
 	</ol>
-	<p class="description"><?php echo Wp_JaS_LINK; ?></p>
+	<p class="description">
+		<?php _e('Check official website for more information', 'onclick-show-popup'); ?>
+		<a target="_blank" href="<?php echo Wp_JaS_FAV; ?>"><?php _e('click here', 'onclick-show-popup'); ?></a>
+	</p>
 	</div>
 </div>

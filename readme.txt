@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-w
 Plugin URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/
 Tags:  jquery, accordion, slideshow, slider
 Requires at least: 3.2
-Tested up to: 3.6
-Stable tag: 6.0
+Tested up to: 3.8
+Stable tag: 6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -86,6 +86,12 @@ Tested up to 3.6
 Added few security features.
 New admin layout.
 
+= 6.1 =
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (jquery-accordion.po) available in the languages folder.
+
 == Changelog ==
 
 = 1.0 =
@@ -119,3 +125,9 @@ Avoid registering the alternate jQuery. No jQuery conflict.
 Tested up to 3.6
 Added few security features.
 New admin layout.
+
+= 6.1 =
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (jquery-accordion.po) available in the languages folder.
