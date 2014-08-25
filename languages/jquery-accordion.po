@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Jquery accordion slideshow\n"
-"POT-Creation-Date: 2014-02-01 17:12+0800\n"
-"PO-Revision-Date: 2014-02-01 17:12+0800\n"
+"POT-Creation-Date: 2014-08-09 13:20+0800\n"
+"PO-Revision-Date: 2014-08-09 13:20+0800\n"
 "Last-Translator: \n"
 "Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,235 +13,235 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../jquery-accordion-slideshow.php:268 ../jquery-accordion-slideshow.php:269
-#: ../jquery-accordion-slideshow.php:290 ../jquery-accordion-slideshow.php:300
-#: ../jquery-accordion-slideshow.php:301 ../jquery-accordion-slideshow.php:306
-#: ../jquery-accordion-slideshow.php:307 ../pages/image-add.php:119
-#: ../pages/image-edit.php:141 ../pages/image-show.php:51
+#: ../jquery-accordion-slideshow.php:269 ../jquery-accordion-slideshow.php:270
+#: ../jquery-accordion-slideshow.php:291 ../jquery-accordion-slideshow.php:301
+#: ../jquery-accordion-slideshow.php:302 ../jquery-accordion-slideshow.php:307
+#: ../jquery-accordion-slideshow.php:308 ../pages/image-add.php:120
+#: ../pages/image-edit.php:142 ../pages/image-show.php:52
 msgid "Jquery accordion slideshow"
-msgstr ""
-
-#: ../jquery-accordion-slideshow.php:292 ../pages/image-add.php:214
-#: ../pages/image-edit.php:242 ../pages/image-show.php:135
-msgid "Check official website for more information"
 msgstr ""
 
 #: ../jquery-accordion-slideshow.php:293 ../pages/image-add.php:215
 #: ../pages/image-edit.php:243 ../pages/image-show.php:136
+msgid "Check official website for more information"
+msgstr ""
+
+#: ../jquery-accordion-slideshow.php:294 ../pages/image-add.php:216
+#: ../pages/image-edit.php:244 ../pages/image-show.php:137
 msgid "click here"
 msgstr ""
 
-#: ../pages/image-add.php:50 ../pages/image-edit.php:78
+#: ../pages/image-add.php:51 ../pages/image-edit.php:79
 msgid "Please enter the image folder(Where you have your images)."
 msgstr ""
 
-#: ../pages/image-add.php:55 ../pages/image-add.php:60
-#: ../pages/image-edit.php:83 ../pages/image-edit.php:88
+#: ../pages/image-add.php:56 ../pages/image-add.php:61
+#: ../pages/image-edit.php:84 ../pages/image-edit.php:89
 msgid "Please select the gallery name."
 msgstr ""
 
-#: ../pages/image-add.php:75
+#: ../pages/image-add.php:76
 msgid "New details was successfully added."
 msgstr ""
 
-#: ../pages/image-add.php:111 ../pages/image-edit.php:133
+#: ../pages/image-add.php:112 ../pages/image-edit.php:134
 msgid "Click here to view the details"
 msgstr ""
 
-#: ../pages/image-add.php:121
+#: ../pages/image-add.php:122
 msgid "Add details"
 msgstr ""
 
-#: ../pages/image-add.php:123 ../pages/image-edit.php:145
-#: ../pages/image-show.php:65 ../pages/image-show.php:76
+#: ../pages/image-add.php:124 ../pages/image-edit.php:146
+#: ../pages/image-show.php:66 ../pages/image-show.php:77
 msgid "Image folder location"
 msgstr ""
 
-#: ../pages/image-add.php:125 ../pages/image-edit.php:147
+#: ../pages/image-add.php:126 ../pages/image-edit.php:148
 msgid "Where is the picture located on your server? Put the address here."
 msgstr ""
 
-#: ../pages/image-add.php:127 ../pages/image-edit.php:149
-#: ../pages/image-show.php:66 ../pages/image-show.php:77
+#: ../pages/image-add.php:128 ../pages/image-edit.php:150
+#: ../pages/image-show.php:67 ../pages/image-show.php:78
 msgid "Gallery name"
 msgstr ""
 
-#: ../pages/image-add.php:144 ../pages/image-edit.php:172
+#: ../pages/image-add.php:145 ../pages/image-edit.php:173
 msgid ""
 "Select your gallery name. This name used to display the gallery in front "
 "page."
 msgstr ""
 
-#: ../pages/image-add.php:146 ../pages/image-edit.php:174
+#: ../pages/image-add.php:147 ../pages/image-edit.php:175
 msgid "Time out"
 msgstr ""
 
-#: ../pages/image-add.php:148 ../pages/image-edit.php:176
+#: ../pages/image-add.php:149 ../pages/image-edit.php:177
 msgid "Time between each slide (in ms)"
 msgstr ""
 
-#: ../pages/image-add.php:150 ../pages/image-edit.php:178
+#: ../pages/image-add.php:151 ../pages/image-edit.php:179
 msgid "Width"
 msgstr ""
 
-#: ../pages/image-add.php:152 ../pages/image-edit.php:180
+#: ../pages/image-add.php:153 ../pages/image-edit.php:181
 msgid "Width of the container (in px)"
 msgstr ""
 
-#: ../pages/image-add.php:154 ../pages/image-edit.php:182
+#: ../pages/image-add.php:155 ../pages/image-edit.php:183
 msgid "Height"
 msgstr ""
 
-#: ../pages/image-add.php:156 ../pages/image-edit.php:184
+#: ../pages/image-add.php:157 ../pages/image-edit.php:185
 msgid "Height of the container (in px)"
 msgstr ""
 
-#: ../pages/image-add.php:158 ../pages/image-edit.php:186
+#: ../pages/image-add.php:159 ../pages/image-edit.php:187
 msgid "Slide Width"
 msgstr ""
 
-#: ../pages/image-add.php:160 ../pages/image-edit.php:188
+#: ../pages/image-add.php:161 ../pages/image-edit.php:189
 msgid "Width of each slide (in px)"
 msgstr ""
 
-#: ../pages/image-add.php:162 ../pages/image-edit.php:190
+#: ../pages/image-add.php:163 ../pages/image-edit.php:191
 msgid "Slide Height"
 msgstr ""
 
-#: ../pages/image-add.php:164 ../pages/image-edit.php:192
+#: ../pages/image-add.php:165 ../pages/image-edit.php:193
 msgid "Height of each slide (in px)"
 msgstr ""
 
-#: ../pages/image-add.php:166 ../pages/image-edit.php:194
+#: ../pages/image-add.php:167 ../pages/image-edit.php:195
 msgid "Speed"
 msgstr ""
 
-#: ../pages/image-add.php:168 ../pages/image-edit.php:196
+#: ../pages/image-add.php:169 ../pages/image-edit.php:197
 msgid "Speed of the slide transition (in ms)"
 msgstr ""
 
-#: ../pages/image-add.php:170 ../pages/image-edit.php:198
+#: ../pages/image-add.php:171 ../pages/image-edit.php:199
 msgid "Tab Width"
 msgstr ""
 
-#: ../pages/image-add.php:172 ../pages/image-edit.php:200
+#: ../pages/image-add.php:173 ../pages/image-edit.php:201
 msgid "Width of each slides TAB (when clicked it opens the slide)"
 msgstr ""
 
-#: ../pages/image-add.php:174 ../pages/image-edit.php:202
+#: ../pages/image-add.php:175 ../pages/image-edit.php:203
 msgid "Pause"
 msgstr ""
 
-#: ../pages/image-add.php:179 ../pages/image-edit.php:207
+#: ../pages/image-add.php:180 ../pages/image-edit.php:208
 msgid "Pause on hover."
 msgstr ""
 
-#: ../pages/image-add.php:181 ../pages/image-edit.php:209
+#: ../pages/image-add.php:182 ../pages/image-edit.php:210
 msgid "Trigger"
 msgstr ""
 
-#: ../pages/image-add.php:186 ../pages/image-edit.php:214
+#: ../pages/image-add.php:187 ../pages/image-edit.php:215
 msgid "Event type that will bind to the \"tab\""
 msgstr ""
 
-#: ../pages/image-add.php:188 ../pages/image-edit.php:216
+#: ../pages/image-add.php:189 ../pages/image-edit.php:217
 msgid "Invert"
 msgstr ""
 
-#: ../pages/image-add.php:193 ../pages/image-edit.php:221
+#: ../pages/image-add.php:194 ../pages/image-edit.php:222
 msgid ""
 "Whether or not to invert the slideshow, so the last slide stays in the same "
 "position, rather than the first slide"
 msgstr ""
 
-#: ../pages/image-add.php:195 ../pages/image-edit.php:223
+#: ../pages/image-add.php:196 ../pages/image-edit.php:224
 msgid "Random"
 msgstr ""
 
-#: ../pages/image-add.php:200 ../pages/image-edit.php:228
+#: ../pages/image-add.php:201 ../pages/image-edit.php:229
 msgid "Do you want to display images in random order?"
 msgstr ""
 
-#: ../pages/image-add.php:206
+#: ../pages/image-add.php:207
 msgid "Insert Details"
 msgstr ""
 
-#: ../pages/image-add.php:207 ../pages/image-edit.php:235
+#: ../pages/image-add.php:208 ../pages/image-edit.php:236
 msgid "Cancel"
 msgstr ""
 
-#: ../pages/image-add.php:208 ../pages/image-edit.php:236
-#: ../pages/image-show.php:124
+#: ../pages/image-add.php:209 ../pages/image-edit.php:237
+#: ../pages/image-show.php:125
 msgid "Help"
 msgstr ""
 
-#: ../pages/image-edit.php:16 ../pages/image-show.php:21
+#: ../pages/image-edit.php:17 ../pages/image-show.php:22
 msgid "Oops, selected details doesnt exist"
 msgstr ""
 
-#: ../pages/image-edit.php:117
+#: ../pages/image-edit.php:118
 msgid "Details was successfully updated."
 msgstr ""
 
-#: ../pages/image-edit.php:143 ../pages/image-edit.php:234
+#: ../pages/image-edit.php:144 ../pages/image-edit.php:235
 msgid "Update Details"
 msgstr ""
 
-#: ../pages/image-show.php:39
+#: ../pages/image-show.php:40
 msgid "Selected record was successfully deleted."
 msgstr ""
 
-#: ../pages/image-show.php:52 ../pages/image-show.php:123
+#: ../pages/image-show.php:53 ../pages/image-show.php:124
 msgid "Add New"
 msgstr ""
 
-#: ../pages/image-show.php:67 ../pages/image-show.php:78
+#: ../pages/image-show.php:68 ../pages/image-show.php:79
 msgid "Container width"
 msgstr ""
 
-#: ../pages/image-show.php:68 ../pages/image-show.php:79
+#: ../pages/image-show.php:69 ../pages/image-show.php:80
 msgid "Container height"
 msgstr ""
 
-#: ../pages/image-show.php:69 ../pages/image-show.php:80
+#: ../pages/image-show.php:70 ../pages/image-show.php:81
 msgid "Slide width"
 msgstr ""
 
-#: ../pages/image-show.php:70 ../pages/image-show.php:81
+#: ../pages/image-show.php:71 ../pages/image-show.php:82
 msgid "Slide height"
 msgstr ""
 
-#: ../pages/image-show.php:96
+#: ../pages/image-show.php:97
 msgid "Edit"
 msgstr ""
 
-#: ../pages/image-show.php:97
+#: ../pages/image-show.php:98
 msgid "Delete"
 msgstr ""
 
-#: ../pages/image-show.php:112
+#: ../pages/image-show.php:113
 msgid "No records available."
 msgstr ""
 
-#: ../pages/image-show.php:117
+#: ../pages/image-show.php:118
 msgid ""
 "Note: Dont upload your original images into plug-in folder. if you upload "
 "the images into plug-in folder, you may lose the images when you update the "
 "plug-in to next version."
 msgstr ""
 
-#: ../pages/image-show.php:128
+#: ../pages/image-show.php:129
 msgid "Plugin configuration option"
 msgstr ""
 
-#: ../pages/image-show.php:130
+#: ../pages/image-show.php:131
 msgid "Drag and drop the widget to your sidebar."
 msgstr ""
 
-#: ../pages/image-show.php:131
+#: ../pages/image-show.php:132
 msgid "Add the plugin in the posts or pages using short code."
 msgstr ""
 
-#: ../pages/image-show.php:132
+#: ../pages/image-show.php:133
 msgid "Add directly in to the theme using PHP code."
 msgstr ""

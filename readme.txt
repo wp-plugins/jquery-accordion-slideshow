@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-w
 Plugin URI: http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/
 Tags:  jquery, accordion, slideshow, slider
 Requires at least: 3.2
-Tested up to: 3.9
-Stable tag: 6.2
+Tested up to: 4.0
+Stable tag: 6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -34,8 +34,6 @@ What is Accordion? Accordion is a web control that allows you to provide multipl
 How to add gallery in the Posts or Pages? Copy and paste the given short code into pages or posts.
 
 == Installation ==
-
-**Installation instruction and configuration**  
 
 [Installation instruction and configuration](http://www.gopiplus.com/work/2011/12/21/jquery-accordion-slideshow-wordpress-plugin/)
 
@@ -98,6 +96,10 @@ Plugin *.po file (jquery-accordion.po) available in the languages folder.
 1. Tested up to 3.9
 2. Added little security feature.
 
+= 6.3 =
+
+1. Tested up to 4.0
+
 == Changelog ==
 
 = 1.0 =
@@ -142,3 +144,7 @@ Plugin *.po file (jquery-accordion.po) available in the languages folder.
 
 1. Tested up to 3.9
 2. Added little security feature.
+
+= 6.3 =
+
+1. Tested up to 4.0
