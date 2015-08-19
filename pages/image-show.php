@@ -4,6 +4,7 @@
 if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
 {
 	$did = isset($_GET['did']) ? $_GET['did'] : '0';
+	if(!is_numeric($did)) { die('<p>Are you sure you want to do this?</p>'); }
 	
 	$JaS_success = '';
 	$JaS_success_msg = FALSE;
@@ -62,7 +63,6 @@ if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
-            <th class="check-column" scope="col"><input type="checkbox" name="JaS_group_item[]" /></th>
 			<th scope="col"><?php _e('Image folder location', 'jquery-accordion'); ?></th>
 			<th scope="col"><?php _e('Gallery name', 'jquery-accordion'); ?></th>
             <th scope="col"><?php _e('Container width', 'jquery-accordion'); ?></th>
@@ -73,7 +73,6 @@ if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
         </thead>
 		<tfoot>
           <tr>
-            <th class="check-column" scope="col"><input type="checkbox" name="JaS_group_item[]" /></th>
 			<th scope="col"><?php _e('Image folder location', 'jquery-accordion'); ?></th>
 			<th scope="col"><?php _e('Gallery name', 'jquery-accordion'); ?></th>
             <th scope="col"><?php _e('Container width', 'jquery-accordion'); ?></th>
@@ -91,7 +90,6 @@ if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
 				{
 					?>
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['JaS_id']; ?>" name="JaS_group_item[]"></td>
 						<td><?php echo $data['JaS_Location']; ?>
 						<div class="row-actions">
 						<span class="edit"><a title="Edit" href="<?php echo WP_JaS_ADMIN_URL; ?>&amp;ac=edit&amp;did=<?php echo $data['JaS_id']; ?>"><?php _e('Edit', 'jquery-accordion'); ?></a> | </span>
@@ -110,7 +108,7 @@ if (isset($_POST['frm_JaS_display']) && $_POST['frm_JaS_display'] == 'yes')
 			}
 			else
 			{
-				?><tr><td colspan="7" align="center"><?php _e('No records available.', 'jquery-accordion'); ?></td></tr><?php 
+				?><tr><td colspan="6" align="center"><?php _e('No records available.', 'jquery-accordion'); ?></td></tr><?php 
 			}
 			?>
 		</tbody>
